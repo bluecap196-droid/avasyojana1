@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b3b82" />
+  <meta name="description" content="BLUECAP CYBER CAFE - પ્રધાનમંત્રી આવાસ યોજના 2.0 પ્રી-રજીસ્ટ્રેશન માહિતી અને સંપર્ક." />
+  <title>PMAY 2.0 Pre-Registration | BLUECAP CYBER CAFE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#0b3b82;
+      --primary-2:#145eb8;
+      --light:#eef6ff;
+      --white:#ffffff;
+      --text:#15314f;
+      --muted:#5e7185;
+      --red:#d71920;
+      --yellow:#ffd54a;
+      --green:#19a45b;
+      --border:#cfe1f5;
+      --shadow:0 14px 35px rgba(11,59,130,.13);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Noto Sans Gujarati",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(20,94,184,.10), transparent 28%),
+        linear-gradient(180deg,#f8fbff 0%,#eef6ff 100%);
+      line-height:1.65;
+    }
+
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font:inherit}
+    img{max-width:100%}
+
+    .top-strip{
+      background:#062e66;
+      color:#fff;
+      text-align:center;
+      padding:8px 14px;
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{
+      max-width:1160px;
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      color:var(--primary);
+    }
+
+    .brand-badge{
+      width:46px;height:46px;border-radius:13px;
+      display:grid;place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      box-shadow:0 8px 20px rgba(11,59,130,.25);
+      font-size:1.35rem;
+    }
+
+    .brand small{display:block;color:var(--muted);font-weight:700;font-size:.75rem}
+    .nav-links{display:flex;align-items:center;gap:12px}
+    .nav-links a{font-weight:700;color:#31506f;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover{background:var(--light);color:var(--primary)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      border:none;
+      border-radius:13px;
+      padding:13px 20px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--primary);color:#fff;box-shadow:0 10px 22px rgba(11,59,130,.2)}
+    .btn-red{background:var(--red);color:#fff;box-shadow:0 10px 22px rgba(215,25,32,.2)}
+    .btn-green{background:var(--green);color:#fff;box-shadow:0 10px 22px rgba(25,164,91,.2)}
+    .btn-outline{background:#fff;color:var(--primary);border:2px solid var(--primary)}
+
+    .hero{
+      max-width:1160px;
+      margin:0 auto;
+      padding:62px 18px 38px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .tag{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      background:#e8f2ff;
+      color:var(--primary);
+      border:1px solid #bfd9f7;
+      border-radius:999px;
+      padding:8px 13px;
+      font-weight:800;
+      font-size:.9rem;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(2.15rem,5vw,4.4rem);
+      line-height:1.12;
+      color:#082f69;
+      letter-spacing:-1px;
+      margin-bottom:18px;
+    }
+
+    h1 span{
+      color:var(--red);
+      display:block;
+    }
+
+    .hero p{
+      font-size:1.07rem;
+      color:#4d6680;
+      margin-bottom:22px;
+    }
+
+    .highlight{
+      border-left:6px solid var(--red);
+      background:#fff;
+      padding:14px 16px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      margin:20px 0;
+      font-weight:800;
+      color:#183b60;
+    }
+
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+
+    .hero-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      width:180px;height:180px;
+      border-radius:50%;
+      background:rgba(20,94,184,.10);
+      right:-60px;top:-60px;
+    }
+
+    .building{
+      height:240px;
+      border-radius:18px;
+      background:
+        linear-gradient(rgba(11,59,130,.10),rgba(11,59,130,.08)),
+        url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80") center/cover;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .building-label{
+      position:absolute;
+      left:15px;bottom:15px;
+      background:rgba(6,46,102,.92);
+      color:#fff;
+      border-radius:12px;
+      padding:10px 13px;
+      font-weight:800;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:15px;
+    }
+
+    .stat{
+      background:var(--light);
+      border:1px solid var(--border);
+      border-radius:15px;
+      padding:14px;
+    }
+
+    .stat b{display:block;color:var(--primary);font-size:1.25rem}
+    .stat span{color:var(--muted);font-size:.88rem}
+
+    .section{
+      max-width:1160px;
+      margin:auto;
+      padding:48px 18px;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 28px;
+    }
+
+    .section-head h2{
+      font-size:clamp(1.65rem,3vw,2.5rem);
+      color:var(--primary);
+      margin-bottom:8px;
+    }
+
+    .section-head p{color:var(--muted)}
+
+    .notice{
+      background:linear-gradient(135deg,#0b3b82,#155fb4);
+      color:#fff;
+      border-radius:22px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .notice-icon{
+      width:54px;height:54px;border-radius:16px;
+      background:#fff;color:var(--red);
+      display:grid;place-items:center;
+      font-size:1.6rem;
+    }
+
+    .notice h3{font-size:1.4rem;margin-bottom:6px}
+    .notice p{color:#e8f1ff}
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 10px 25px rgba(11,59,130,.08);
+      transition:.25s ease;
+    }
+
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .card .icon{
+      width:48px;height:48px;border-radius:14px;
+      display:grid;place-items:center;
+      background:var(--light);color:var(--primary);
+      font-size:1.35rem;margin-bottom:14px;
+    }
+    .card h3{color:#173f6d;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:.95rem}
+
+    .documents{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .doc-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:15px;
+      padding:16px;
+      box-shadow:0 8px 20px rgba(11,59,130,.06);
+    }
+
+    .doc-no{
+      flex:0 0 34px;
+      height:34px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--primary);
+      color:#fff;
+      font-weight:900;
+    }
+
+    .doc-item b{display:block;color:#153d69}
+    .doc-item small{color:var(--muted)}
+
+    .form-wrap{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .contact-panel{
+      background:linear-gradient(160deg,#072f69,#145eb8);
+      color:#fff;
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-panel h2{font-size:2rem;margin-bottom:10px}
+    .contact-panel p{color:#dceaff}
+    .contact-list{margin-top:22px;display:grid;gap:13px}
+    .contact-row{
+      display:flex;align-items:center;gap:12px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:14px;padding:13px;
+    }
+
+    form{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{margin-bottom:14px}
+    label{display:block;font-weight:800;color:#244d76;margin-bottom:7px}
+    input,select,textarea{
+      width:100%;
+      border:1.5px solid #c9daed;
+      background:#fbfdff;
+      border-radius:12px;
+      padding:12px 13px;
+      outline:none;
+      color:#183b5d;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:var(--primary-2);
+      box-shadow:0 0 0 4px rgba(20,94,184,.10);
+    }
+    textarea{min-height:100px;resize:vertical}
+
+    .form-note{
+      background:#fff8db;
+      border:1px solid #f0d46c;
+      color:#755800;
+      padding:11px 12px;
+      border-radius:12px;
+      font-size:.88rem;
+      margin-bottom:14px;
+    }
+
+    .success,.error{
+      display:none;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:700;
+      margin-top:12px;
+    }
+    .success{background:#e8faef;color:#08783b;border:1px solid #9fe0bb}
+    .error{background:#fff0f0;color:#a3141a;border:1px solid #f2b0b3}
+
+    .disclaimer{
+      background:#fff;
+      border:1px dashed #8fb0d4;
+      border-radius:16px;
+      padding:16px;
+      color:#55708b;
+      font-size:.9rem;
+      margin-top:22px;
+    }
+
+    footer{
+      background:#062e66;
+      color:#d9e8fb;
+      margin-top:38px;
+    }
+    .footer-inner{
+      max-width:1160px;
+      margin:auto;
+      padding:28px 18px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    footer b{color:#fff}
+    .floating{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:60;
+      width:58px;height:58px;border-radius:50%;
+      display:grid;place-items:center;
+      background:#20b45b;color:#fff;
+      font-size:1.6rem;
+      box-shadow:0 12px 28px rgba(0,0,0,.25);
+      animation:pulse 1.8s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.07)}
+    }
+
+    @media (max-width:900px){
+      .hero,.form-wrap{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+    }
+
+    @media (max-width:600px){
+      .hero{padding-top:36px}
+      .cards,.documents,.grid-2,.stats{grid-template-columns:1fr}
+      .hero-actions .btn{width:100%}
+      .section{padding:36px 14px}
+      .nav{padding:11px 14px}
+      .brand span{font-size:.9rem}
+      .building{height:205px}
+      .notice{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip">સરકારી યોજના અંગેની માહિતી માટે સત્તાવાર જાહેરાત અને BMCની સૂચના અંતિમ માન્ય રહેશે.</div>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="#home">
+        <span class="brand-badge">🏠</span>
+        <span>BLUECAP CYBER CAFE<small>Digital Registration Assistance</small></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#info">માહિતી</a>
+        <a href="#documents">ડોક્યુમેન્ટ</a>
+        <a href="#register">રજીસ્ટ્રેશન</a>
+      </nav>
+
+      <a class="btn btn-primary" href="tel:+918140305869">📞 8140305869</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div>
+        <div class="tag">🇮🇳 PMAY-U 2.0 • ભાવનગર</div>
+        <h1>પ્રધાનમંત્રી <span>આવાસ યોજના 2.0</span></h1>
+        <p>
+          ભાવનગર મહાનગર પાલિકા વિસ્તારમાં આર્થિક રીતે નબળા વર્ગ માટે આવનારી આવાસ પ્રક્રિયા પહેલાં
+          <strong>ઓનલાઇન ડિમાન્ડ સર્વે / પ્રી-રજીસ્ટ્રેશન</strong> કરવાની માહિતી.
+        </p>
+
+        <div class="highlight">
+          નવા આવાસ જાહેર થાય તે પહેલાં જરૂરી માહિતી અને દસ્તાવેજ તૈયાર રાખવા માટે આજેજ પ્રી-રજીસ્ટ્રેશન સહાય મેળવો.
+        </div>
+
+        <div class="hero-actions">
+          <a href="#register" class="btn btn-red">📝 પ્રી-રજીસ્ટ્રેશન કરો</a>
+          <a href="https://chat.whatsapp.com/GyMs2rYXj29L4NUfqYzReo" target="_blank" rel="noopener" class="btn btn-green">💬 WhatsApp ગ્રુપમાં જોડાઓ</a>
+          <a href="tel:+918140305869" class="btn btn-outline">☎️ સીધો સંપર્ક</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="building">
+          <div class="building-label">અંદાજિત વિસ્તાર: Airport Road – આધેવાડા આસપાસ</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>3170</b><span>અંદાજિત 2BHK EWS-2 આવાસ</span></div>
+          <div class="stat"><b>119</b><span>અંદાજિત 2BHK EWS-1 આવાસ</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="info">
+      <div class="notice">
+        <div class="notice-icon">📢</div>
+        <div>
+          <h3>મહત્વપૂર્ણ માહિતી</h3>
+          <p>
+            ભાવનગર મહાનગર પાલિકા દ્વારા PMAY સંબંધિત આવાસ નજીકના ભવિષ્યમાં જાહેર થઈ શકે છે.
+            અરજી/ફાળવણીની અંતિમ તારીખ, કિંમત, આવક મર્યાદા, સ્થળ અને પાત્રતા સત્તાવાર જાહેરાત મુજબ જ માન્ય રહેશે.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>પ્રી-રજીસ્ટ્રેશન શા માટે?</h2>
+        <p>તમારી મૂળભૂત માહિતી અને જરૂરી દસ્તાવેજ તૈયાર રાખવાથી સત્તાવાર પ્રક્રિયા શરૂ થાય ત્યારે સમય બચી શકે છે.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🧾</div>
+          <h3>ડિમાન્ડ સર્વે સહાય</h3>
+          <p>લાભાર્થીની પ્રાથમિક માહિતી, પરિવારની વિગતો અને આવક આધારિત માહિતી ગોઠવવામાં સહાય.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📂</div>
+          <h3>ડોક્યુમેન્ટ ચેક</h3>
+          <p>આધાર, રેશનકાર્ડ, બેંક પાસબુક અને આવક દાખલા જેવા દસ્તાવેજોની પૂર્વ તપાસ.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>WhatsApp અપડેટ</h3>
+          <p>અમારા માહિતી ગ્રુપ દ્વારા જાહેર સૂચના, જરૂરી દસ્તાવેજ અને અરજી સંબંધિત માહિતી મેળવી શકશો.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="documents">
+      <div class="section-head">
+        <h2>જરૂરી ડોક્યુમેન્ટ</h2>
+        <p>રજીસ્ટ્રેશન પહેલાં નીચેના દસ્તાવેજોની સ્પષ્ટ નકલ સાથે રાખો.</p>
+      </div>
+
+      <div class="documents">
+        <div class="doc-item"><span class="doc-no">1</span><div><b>અરજદારનું આધારકાર્ડ</b><small>મોબાઇલ નંબર સાથે જોડાયેલ હોય તો વધુ સારું.</small></div></div>
+        <div class="doc-item"><span class="doc-no">2</span><div><b>માતા-પિતાના આધારકાર્ડ</b><small>લાગુ પડે ત્યાં સુધી.</small></div></div>
+        <div class="doc-item"><span class="doc-no">3</span><div><b>રેશન કાર્ડ</b><small>પરિવારના સભ્યોની વિગતો સ્પષ્ટ હોવી જોઈએ.</small></div></div>
+        <div class="doc-item"><span class="doc-no">4</span><div><b>ઘરના તમામ સભ્યોના આધારકાર્ડ</b><small>એક જ પરિવારની માહિતી માટે.</small></div></div>
+        <div class="doc-item"><span class="doc-no">5</span><div><b>બેંક પાસબુક</b><small>નામ, ખાતા નંબર અને IFSC દેખાય તેવી નકલ.</small></div></div>
+        <div class="doc-item"><span class="doc-no">6</span><div><b>આવક દાખલો</b><small>01/04/2024 પછીનો, અથવા સત્તાવાર સૂચના મુજબ માન્ય તારીખનો.</small></div></div>
+      </div>
+
+      <div class="disclaimer">
+        નોંધ: આવક દાખલો ન હોય તો BLUECAP CYBER CAFE પર તેની અરજી માટે અલગ સેવા ઉપલબ્ધ છે.
+        દસ્તાવેજ અને આવક મર્યાદા સત્તાવાર જાહેરાત મુજબ બદલાઈ શકે છે.
+      </div>
+    </section>
+
+    <section class="section" id="register">
+      <div class="form-wrap">
+        <aside class="contact-panel">
+          <h2>આજેજ સંપર્ક કરો</h2>
+          <p>નીચે ફોર્મ ભરો. માહિતી સેવ થયા પછી WhatsApp પર તૈયાર મેસેજ મોકલવાનો વિકલ્પ ખુલશે.</p>
+
+          <div class="contact-list">
+            <div class="contact-row">🏢 <strong>BLUECAP CYBER CAFE</strong></div>
+            <div class="contact-row">📞 <strong>8140305869</strong></div>
+            <div class="contact-row">💬 WhatsApp પ્રી-રજીસ્ટ્રેશન સહાય</div>
+            <div class="contact-row">🕘 સમય માટે ફોન/WhatsApp દ્વારા પુષ્ટિ કરો</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-green" href="https://wa.me/918140305869?text=નમસ્તે%20BLUECAP%20CYBER%20CAFE,%20મારે%20PMAY%202.0%20પ્રી-રજીસ્ટ્રેશન%20વિશે%20માહિતી%20જોઈએ%20છે." target="_blank" rel="noopener">WhatsApp કરો</a>
+            <a class="btn btn-outline" href="https://chat.whatsapp.com/GyMs2rYXj29L4NUfqYzReo" target="_blank" rel="noopener">ગ્રુપ Join કરો</a>
+          </div>
+        </aside>
+
+        <form id="registrationForm">
+          <h2 style="color:#0b3b82;margin-bottom:6px">પ્રી-રજીસ્ટ્રેશન ઇન્ક્વાયરી ફોર્મ</h2>
+          <p style="color:#61758a;margin-bottom:18px">આ ફોર્મ સત્તાવાર BMC અરજી નથી. આ BLUECAP CYBER CAFEની સહાય/સંપર્ક નોંધ છે.</p>
+
+          <div class="form-note">તમારી માહિતી માત્ર સંપર્ક અને રજીસ્ટ્રેશન સહાય માટે જ આપો. OTP, ATM PIN કે બેંક પાસવર્ડ ક્યારેય ન આપશો.</div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">પૂર્ણ નામ *</label>
+              <input id="name" name="name" required maxlength="80" placeholder="તમારું પૂરું નામ" />
+            </div>
+            <div class="field">
+              <label for="mobile">મોબાઇલ નંબર *</label>
+              <input id="mobile" name="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 અંકનો નંબર" />
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="area">વિસ્તાર / સરનામું *</label>
+              <input id="area" name="area" required maxlength="120" placeholder="ભાવનગર વિસ્તાર" />
+            </div>
+            <div class="field">
+              <label for="income">વાર્ષિક આવક</label>
+              <select id="income" name="income">
+                <option value="">પસંદ કરો</option>
+                <option>₹1 લાખ સુધી</option>
+                <option>₹1 લાખથી ₹3 લાખ</option>
+                <option>₹3 લાખથી વધુ</option>
+                <option>ખબર નથી</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="incomeCertificate">આવક દાખલો છે?</label>
+              <select id="incomeCertificate" name="incomeCertificate">
+                <option value="હા">હા</option>
+                <option value="ના">ના</option>
+                <option value="કઢાવવો છે">કઢાવવો છે</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rationCard">રેશન કાર્ડ છે?</label>
+              <select id="rationCard" name="rationCard">
+                <option value="હા">હા</option>
+                <option value="ના">ના</option>
+                <option value="અપડેટ કરાવવું છે">અપડેટ કરાવવું છે</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="note">વધારાની નોંધ</label>
+            <textarea id="note" name="note" maxlength="500" placeholder="તમારી કોઈ ખાસ માહિતી અથવા પ્રશ્ન"></textarea>
+          </div>
+
+          <label style="display:flex;gap:10px;align-items:flex-start;font-weight:600;color:#4f6880;margin-bottom:14px">
+            <input type="checkbox" id="consent" required style="width:auto;margin-top:5px">
+            હું સમજું છું કે આ ફોર્મ સત્તાવાર સરકારી અરજી નથી અને BLUECAP CYBER CAFEને સંપર્ક માટે માહિતી મોકલું છું.
+          </label>
+
+          <button class="btn btn-red" style="width:100%" type="submit" id="submitBtn">📝 માહિતી મોકલો અને WhatsApp ખોલો</button>
+          <div id="successBox" class="success"></div>
+          <div id="errorBox" class="error"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><b>BLUECAP CYBER CAFE</b><br>Digital Assistance • Bhavnagar</div>
+      <div>☎️ 8140305869</div>
+      <div>© <span id="year"></span> BLUECAP CYBER CAFE</div>
+    </div>
+  </footer>
+
+  <a class="floating" aria-label="WhatsApp" href="https://wa.me/918140305869?text=નમસ્તે%20BLUECAP%20CYBER%20CAFE,%20મારે%20PMAY%202.0%20વિશે%20માહિતી%20જોઈએ%20છે." target="_blank" rel="noopener">💬</a>
+
+  <script>
+    const form = document.getElementById("registrationForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const successBox = document.getElementById("successBox");
+    const errorBox = document.getElementById("errorBox");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      successBox.style.display = "none";
+      errorBox.style.display = "none";
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = Object.fromEntries(new FormData(form).entries());
+      formData.source = "PMAY 2.0 BLUECAP Website";
+      formData.createdAt = new Date().toISOString();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "માહિતી મોકલાઈ રહી છે...";
+
+      try {
+        const response = await fetch("/api/register", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.message || "માહિતી મોકલી શકાઈ નથી.");
+
+        successBox.textContent = "માહિતી સફળતાપૂર્વક સેવ થઈ. હવે WhatsApp ખુલશે.";
+        successBox.style.display = "block";
+
+        const message =
+`નમસ્તે BLUECAP CYBER CAFE,
+
+મારે PMAY 2.0 પ્રી-રજીસ્ટ્રેશન સહાય જોઈએ છે.
+
+નામ: ${formData.name}
+મોબાઇલ: ${formData.mobile}
+વિસ્તાર: ${formData.area}
+વાર્ષિક આવક: ${formData.income || "જણાવેલ નથી"}
+આવક દાખલો: ${formData.incomeCertificate}
+રેશન કાર્ડ: ${formData.rationCard}
+નોંધ: ${formData.note || "કોઈ નોંધ નથી"}
+
+Registration ID: ${result.registrationId}`;
+
+        const waUrl = "https://wa.me/918140305869?text=" + encodeURIComponent(message);
+        window.open(waUrl, "_blank", "noopener");
+        form.reset();
+      } catch (err) {
+        errorBox.textContent = err.message || "Server error. કૃપા કરીને સીધો WhatsApp કરો.";
+        errorBox.style.display = "block";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "📝 માહિતી મોકલો અને WhatsApp ખોલો";
+      }
+    });
+  </script>
+</body>
+</html>
+'''
